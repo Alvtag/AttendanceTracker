@@ -5,7 +5,7 @@ import android.databinding.Bindable;
 
 import attendancetracker.alvinc.com.myapplication.BR;
 
-public class Attendee extends BaseObservable  {
+public class Member extends BaseObservable  {
 
     private String name, id, email, phone, label;
 
@@ -39,7 +39,7 @@ public class Attendee extends BaseObservable  {
         this.label = label;
     }
 
-    public Attendee(String name, String id, String email, String phone, String label) {
+    public Member(String name, String id, String email, String phone, String label) {
         this.name = name;
         this.id = id;
         this.email = email;

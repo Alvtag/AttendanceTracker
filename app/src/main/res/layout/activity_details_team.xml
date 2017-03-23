@@ -35,18 +35,13 @@
             android:layout_width="match_parent"
             android:orientation="horizontal"
             android:weightSum="1"
-            android:layout_height="match_parent">
+            android:layout_height="wrap_content">
 
 
             <attendancetracker.alvinc.com.myapplication.roster.RosterFragment
                 android:layout_width="0dp"
-                android:layout_weight = "0.6"
-                android:layout_height="match_parent"
-                />
-            <attendancetracker.alvinc.com.myapplication.eventslist.EventsListFragment
-                android:layout_width="0dp"
-                android:layout_weight = "0.4"
-                android:layout_height="match_parent"
+                android:layout_weight = "0.7"
+                android:layout_height="wrap_content"
                 />
 
         </LinearLayout>

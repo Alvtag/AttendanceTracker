@@ -11,12 +11,12 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.ImageButton;
 
 import java.lang.ref.WeakReference;
 
 import attendancetracker.alvinc.com.myapplication.R;
 import attendancetracker.alvinc.com.myapplication.databinding.ActivityMainBinding;
+import attendancetracker.alvinc.com.myapplication.model.Member;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -37,13 +37,13 @@ public class MainActivity extends AppCompatActivity {
         binding.setView(this);
         binding.setViewModel(mainViewModel);
 
-//        mainViewModel.attendee.addOnPropertyChangedCallback(new Observable.OnPropertyChangedCallback() {
+//        mainViewModel.member.addOnPropertyChangedCallback(new Observable.OnPropertyChangedCallback() {
 //            @Override
 //            public void onPropertyChanged(Observable observable, int i) {
 //                Log.d("ALVTAG", "onPropertyChanged");
 //                switch (i){
-//                    case Attendee.FIELD:
-//                        binding.setUser(mainViewModel.attendee.get());
+//                    case Member.FIELD:
+//                        rosterTeamBinding.setUser(mainViewModel.member.get());
 //                        return;
 //                }
 //            }
@@ -55,11 +55,11 @@ public class MainActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        ImageButton fab = (ImageButton) findViewById(R.id.fab_add_team);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
+//        ImageButton fab = (ImageButton) findViewById(R.id.fab_add_team);
+//        fab.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//
 //                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
 //                        .setAction("Action", new View.OnClickListener() {
 //                            @Override
@@ -67,8 +67,8 @@ public class MainActivity extends AppCompatActivity {
 //                                Toast.makeText(MainActivity.this, "lol", Toast.LENGTH_SHORT).show();
 //                            }
 //                        }).show();
-            }
-        });
+//            }
+//        });
     }
 
     @Override
@@ -96,6 +96,10 @@ public class MainActivity extends AppCompatActivity {
     public void afterTextChanged(@NonNull final Editable editable) {
         Log.d("ALVTAG", "MainAct - afterTextChanged:"+editable.toString());
         mainViewModel.afterTextChanged(editable.toString());
+    }
+
+    public void onButtonClick(View view){
+        mainViewModel.onButtonClicked();
     }
 
     /**

@@ -2,20 +2,24 @@ package attendancetracker.alvinc.com.myapplication.main;
 
 import android.support.annotation.NonNull;
 
-import attendancetracker.alvinc.com.myapplication.model.Attendee;
+import attendancetracker.alvinc.com.myapplication.model.Member;
 
 public class MainViewModel {
-    final Attendee attendee; // final for observables
+    final Member member; // final for observables
 
-    public Attendee getAttendee() {
-        return attendee;
+    MainViewModel() {
+        this.member = new Member("initValue", "id", "email", "phone", "sixer");
     }
 
-    public MainViewModel() {
-        this.attendee = new Attendee("initValue", "id", "email", "phone", "sixer");
+    public Member getMember() {
+        return member;
     }
 
-    public void afterTextChanged(@NonNull final String string) {
-        attendee.setName(string);
+    void afterTextChanged(@NonNull final String string) {
+        member.setName(string);
+    }
+
+    void onButtonClicked() {
+        member.setName("");
     }
 }
